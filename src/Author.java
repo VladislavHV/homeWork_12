@@ -10,12 +10,6 @@ public class Author {
         this.surname = surname;
     }
 
-    //Напишите конструкторы для обоих классов, заполняющие все поля.
-
-    public void BookAuthor (String name, String surname){
-
-    }
-
     //Создайте геттеры для всех полей автора и всех полей книги.
 
     public String getName(){

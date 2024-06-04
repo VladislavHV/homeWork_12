@@ -39,18 +39,18 @@ public class Main {
         System.out.println("Задача №6");
 
         Author nameAuthor = new Author("Lev", "Tolstoy");
-        //System.out.println(nameAuthor.getName());
-        //System.out.println(nameAuthor.getSurname());
+        System.out.println(nameAuthor.getName());
+        System.out.println(nameAuthor.getSurname());
 
-        Book publicBook = new Book("Lev Toslsoy", 1992);
-        //System.out.println(publicBook.getAuthor());
-        //System.out.println(publicBook.getPublicationYear());
+        Book publicBook = new Book(nameAuthor, 1988);
+        System.out.println(publicBook.getPublicationYear());
+        System.out.println(nameAuthor.getName() + " " + nameAuthor.getSurname());
 
         //В том же методе main измените год публикации одной из книг с помощью сеттера.
 
         System.out.println("Задача №7");
 
         publicBook.setPublicationYear(2024);
-        //System.out.println(publicBook.getPublicationYear());
+        System.out.println(publicBook.getPublicationYear());
     }
 }
