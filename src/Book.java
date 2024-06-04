@@ -6,18 +6,12 @@
 
 public class Book {
     private String title;
-    private String author;
+    private Author author;
     private int publicationYear;
 
-    public Book (String author, int publicationYear){
+    public Book (Author author, int publicationYear){
         this.author = author;
         this.publicationYear = publicationYear;
-    }
-
-    //Напишите конструкторы для обоих классов, заполняющие все поля.
-
-    public void CreationBook (String title, String author, int publicationYear){
-
     }
 
     //Создайте геттеры для всех полей автора и всех полей книги.
@@ -26,7 +20,7 @@ public class Book {
         return title;
     }
 
-    public String getAuthor(){
+    public Author getAuthor(){
         return author;
     }
 
