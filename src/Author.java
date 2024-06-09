@@ -1,22 +1,38 @@
-/*
-Создайте класс Author, который содержит в себе данные об имени и фамилии автора.
- */
+import java.util.Objects;
+
 public class Author {
     private String name;
     private String surname;
 
-    public Author (String name, String surname){
+    public Author(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }
 
-    //Создайте геттеры для всех полей автора и всех полей книги.
-
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public String getSurname(){
+    public String getSurname() {
         return surname;
+    }
+
+    @Override
+    public String toString() {
+        return "Author " + "name " + name + ", surname " + surname;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return Objects.equals(name, author.name) &&
+                Objects.equals(surname, author.surname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname);
     }
 }

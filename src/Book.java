@@ -1,36 +1,50 @@
-        /*
-        Создайте класс Book, который будет содержать в себе данные о названии,
-        авторе и годе публикации книги. Убедитесь, что типы полей класса Book выбраны правильно:
-        это String, Author и int
-        */
+import java.util.Objects;
 
 public class Book {
     private String title;
     private Author author;
     private int publicationYear;
 
-    public Book (Author author, int publicationYear){
+    public Book(String title, Author author, int publicationYear) {
+        this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
     }
 
-    //Создайте геттеры для всех полей автора и всех полей книги.
-
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    public Author getAuthor(){
+    public Author getAuthor() {
         return author;
     }
 
-    public int getPublicationYear(){
+    public int getPublicationYear() {
         return publicationYear;
     }
 
-    //Создайте сеттер для поля «Год публикации» у книги.
-
-    public void setPublicationYear (int publicationYear){
+    public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
     }
+
+    @Override
+    public String toString() {
+        return "Book " + "title " + title + ", author " + author + ", publicationYear " + publicationYear;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return publicationYear == book.publicationYear &&
+                Objects.equals(title, book.title) &&
+                Objects.equals(author, book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, publicationYear);
+    }
 }
+
